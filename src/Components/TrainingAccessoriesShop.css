@@ -1,0 +1,6 @@
+#btnClear {
+    border: bisque solid 1px;
+    border-radius: 4px;
+    background: unset;
+    font-weight: bold;
+}

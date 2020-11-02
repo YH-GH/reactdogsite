@@ -1,0 +1,24 @@
+.cartItem {
+    /* height: 10%;
+    width: 30%; */
+    display:inline-block;
+}
+
+p {
+    font-size: 0.7em;
+}
+
+.row {
+    margin:1em;
+}
+
+label {
+    font-size: 0.7em;
+    font-style: italic;
+    margin-right: 0.7em;
+    width:5em;
+}
+
+img {
+    max-width: 50%;
+}
