@@ -10,6 +10,7 @@ import {
 } from "react-router-dom";
 import DogBreeds from './Components/DogBreeds';
 import TrainingAccessoriesShop from './Components/TrainingAccessoriesShop';
+import Tips from './Components/Tips';
 
 
 class App extends React.Component {
@@ -26,7 +27,7 @@ class App extends React.Component {
 
         <Switch>
             <Route exact path="/"><Home /></Route>
-            <Route exact path="/tips"><Home /></Route>
+            <Route exact path="/tips"><Tips /></Route>
             <Route path="/shop"><TrainingAccessoriesShop /></Route>
 
             {/* <Route path="/display/:subject" render={({ match }) => <DisplayInfo id="12345" match={match} />} />
@@ -40,9 +41,12 @@ class App extends React.Component {
 class Home extends React.Component {
   render() {
     return (
-      <div>
-        home
-        <DogBreeds/>
+      <div className="container-fluid">
+        <div className="row justify-content-center">
+          <div className="col-12 bg-dark">
+            <DogBreeds/>
+          </div>
+        </div>
       </div>
 
     );

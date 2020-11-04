@@ -21,6 +21,17 @@ class TrainingAccessoriesShop extends React.Component {
                     name: "Clicker",
                     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum pariatur eos provident debitis reprehenderit porro optio. Eveniet mollitia facilis voluptates nam! Adipisci rem dolorum mollitia, a consequatur in perferendis fugiat?",
                     imgURL: "https://static.miscota.com/media/1/photos/products/072354/72354-4011905228600hdfh_1_g.jpg",
+                },
+                {
+                    key:"barkingrepeller",
+                    name: "Barking Repller",
+                    description: "Ultrasonic anti barking device",
+                    imgURL: "https://ae01.alicdn.com/kf/H0bb984f744514637bc357ae866cce289P/Ultrasonic-Anti-Barking-Device-Dog-Training-Equipment-Outdoor-Waterproof-Dog-Repeller-Stop-Bark-Dogs-Accessories-Pet.jpg"
+                },
+                {
+                    key:"",
+                    name:"",
+                    description: ""
                 }
             ]
         };

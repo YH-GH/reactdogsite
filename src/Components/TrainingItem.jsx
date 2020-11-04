@@ -19,7 +19,7 @@ class TrainingItem extends React.Component {
                         <img src={this.props.imgURL} alt={this.props.name}/>
                     </div>
                     <div className='col-5'>
-                        <p>{this.props.description}</p>
+                        {this.props.description}
                     </div>
                     <div className='col-3'>
                         <label htmlFor="addToCart">{this.props.isSelected ? "In cart" : "Add to cart"}</label>
