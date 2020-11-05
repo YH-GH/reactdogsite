@@ -1,5 +1,6 @@
 import React from 'react';
 import tipsData from '../tipsData.json';
+import catDescData from '../tipCategoryDesc.json';
 import Carousel from 'react-bootstrap/Carousel';
 import './Tips.css';
 
@@ -11,26 +12,21 @@ class Tips extends React.Component {
         
             this.state = {
                 tipsData,
+                catDescData,
                 categories: distinctCategories,
                 currCategory: distinctCategories[0],
-                behaviorDesc: this.getBehaviorDesc(distinctCategories[0])
+                currCategoryDesc: catDescData[0].desc
         }
     }
 
     handleSelectionChange = (event) => {        
+        const currCategoryDesc = this.state.catDescData.filter(categoryData =>
+            categoryData.category === event.target.value)[0].desc;
+        console.log(currCategoryDesc);
         this.setState({
-            currCategory: event.target.value
+            currCategory: event.target.value,
+            currCategoryDesc
         });
-    }
-
-    getBehaviorDesc(category) {
-        switch (category) {
-            case "Separation anxiety":
-                return "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eveniet cumque quidem qui nulla, explicabo suscipit odio neque ratione ipsum deserunt. Excepturi sequi dicta libero mollitia ea amet, ab aliquid vero."
-            case "Barking":
-                return "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iusto laudantium nam aperiam libero doloribus quidem perferendis cumque, magni illo esse a. Illo reprehenderit numquam in nulla! Nisi saepe in dicta?";
-
-        }
     }
 
     render() {
@@ -40,7 +36,7 @@ class Tips extends React.Component {
         const displayItems = this.state.tipsData.filter(tipData => 
             tipData.category === this.state.currCategory)
             .map((tipData,idx) =>
-            <Carousel.Item key={idx} interval={4500}>                
+            <Carousel.Item key={idx} interval={3000}>                
                 <p className="tip">{tipData.tip}</p>
                 <Carousel.Caption></Carousel.Caption>
             </Carousel.Item>);
@@ -49,16 +45,17 @@ class Tips extends React.Component {
         return (
             <div className="container=fluid">
                 <div className="row">
+                    <div className="col-1"></div>
                     <div className="col-9">
                         <select name="Dog Behavior" onChange={this.handleSelectionChange}>
                             {selectOptions}
                         </select>
+                        <div className="descBg">
+                            <p className="descText">{this.state.currCategoryDesc}</p>
+                        </div>
                         <Carousel>
                             {displayItems}
                         </Carousel>
-                        <div className="descBg">
-                            <p className="descText">{this.state.behaviorDesc}</p>
-                        </div>
                     </div>
                 </div>
             </div>

@@ -43,12 +43,19 @@ class Home extends React.Component {
     return (
       <div className="container-fluid">
         <div className="row justify-content-center">
-          <div className="col-12">
+          <div className="col-1"></div>
+          <div className="col-7 text-center">
             <DogBreeds/>
+            <div className="css-typing">
+              <h1>You and your Dog...</h1>
+              <p>Are in a relationship.</p>
+              Your dog may be of any breed, and might have known behavioral issues considered to be imprinted in the breed's DNA.
+              <h3>BUT...</h3>
+
+            </div>
           </div>
         </div>
       </div>
-
     );
   }
 }
