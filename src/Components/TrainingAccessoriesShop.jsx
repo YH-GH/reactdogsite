@@ -76,8 +76,14 @@ class TrainingAccessoriesShop extends React.Component {
         
         return (
             <div>
+                <button className="btnClear" onClick={() => this.handleClearCart()} disabled={this.state.cart.length === 0}>
+                    <div className="btnText">
+                        Empty shopping cart
+                    </div>
+                    <div className="btnImg">
+                    </div>
+                </button>
                 {displayItems}
-                <button id="btnClear" onClick={() => this.handleClearCart()}>Empty shopping cart</button>
             </div>
         );
     }

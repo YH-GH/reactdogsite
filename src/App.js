@@ -43,7 +43,7 @@ class Home extends React.Component {
     return (
       <div className="container-fluid">
         <div className="row justify-content-center">
-          <div className="col-12 bg-dark">
+          <div className="col-12">
             <DogBreeds/>
           </div>
         </div>

@@ -19,6 +19,6 @@ label {
     width:5em;
 }
 
-img {
+.itemImg {
     max-width: 50%;
 }

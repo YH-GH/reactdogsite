@@ -1,6 +1,29 @@
-#btnClear {
-    border: bisque solid 1px;
-    border-radius: 4px;
-    background: unset;
-    font-weight: bold;
+.btnClear {
+    border: cyan solid 1px;
+    border-radius: 5px;
+    border-style: groove;
+    margin-left: 2em;
+    padding:0.5em;
+    box-shadow: 3px gray;
+}
+
+.btnClear:disabled {
+    opacity: 0.3;
+}
+
+.btnText {
+    position: relative;
+    display:inline-block;
+    font-style: italic;
+    font-size: 1em;
+}
+
+.btnImg {
+    width:25px;
+    height:25px;
+    background-size: contain;
+    background-image: url(../image/shopping-cart-of-checkered-design.svg);
+    background-repeat: no-repeat;
+    display: inline-block;
+    opacity: 0.6;
 }

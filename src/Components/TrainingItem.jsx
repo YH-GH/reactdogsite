@@ -16,7 +16,7 @@ class TrainingItem extends React.Component {
                 <div className="row">
                     <div className='cartItem col-3'>
                         <h5>{this.props.name}</h5>
-                        <img src={this.props.imgURL} alt={this.props.name}/>
+                        <img className="itemImg" src={this.props.imgURL} alt={this.props.name}/>
                     </div>
                     <div className='col-5'>
                         {this.props.description}

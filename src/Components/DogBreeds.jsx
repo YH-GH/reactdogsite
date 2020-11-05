@@ -13,41 +13,42 @@ class DogBreeds extends React.Component {
     }
     
     async componentDidMount() {
-        // this.state.intervalId = setInterval(async ()=> {
-        //     const result = await axios.get("https://dog.ceo/api/breeds/image/random");
-        //     const randImgURL = result.data.message;
-
-        //     this.setState(prev => ({
-        //             allImgURLs: prev.allImgURLs.includes(randImgURL) ? prev.allImgURLs : prev.allImgURLs.concat(randImgURL) 
-        //         })
-        //     )
-        // }, 3200);                
-        let imgs=[];
-        for (let i=0;i < 20;i++) {
+        this.state.intervalId = setInterval(async ()=> {
             const result = await axios.get("https://dog.ceo/api/breeds/image/random");
             const randImgURL = result.data.message;
-            if (imgs.includes(randImgURL) == false) {
-                imgs.push(result.data.message);
-            }
-        }
 
-        this.setState({
-            allImgURLs: imgs
-        });
+            this.setState(prev => ({
+                    allImgURLs: prev.allImgURLs.includes(randImgURL) ? prev.allImgURLs : prev.allImgURLs.concat(randImgURL) 
+                })
+            )
+        }, 1000);              
+        
+        setTimeout(() => {clearInterval(this.state.intervalId);},30000);
+        // let imgs=[];
+        // for (let i=0;i < 20;i++) {
+        //     const result = await axios.get("https://dog.ceo/api/breeds/image/random");
+        //     const randImgURL = result.data.message;
+        //     if (imgs.includes(randImgURL) == false) {
+        //         imgs.push(result.data.message);
+        //     }
+        // }
+
+        // this.setState({
+        //     allImgURLs: imgs
+        // });
     }
 
-    // componentWillUnmount() {
-    //     clearInterval(this.state.intervalId);
-    // }
+    componentWillUnmount() {
+        clearInterval(this.state.intervalId);
+    }
 
 
     render() { 
         const displayItems = this.state.allImgURLs.map(imgURL => {
                 //example: https://images.dog.ceo/breeds/dhole/n02115913_1323.jpg
                 const breed = imgURL.replace("https://images.dog.ceo/breeds/","").split('/')[0];
-                console.log("breed:",breed);
                 return (
-                    <Carousel.Item interval={2000} key={imgURL}>
+                    <Carousel.Item interval={1500} key={imgURL}>
                         <img className="dogBreedImg" src={imgURL} alt="random breed"/> 
                         <Carousel.Caption>
                             {breed}
